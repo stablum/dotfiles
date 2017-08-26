@@ -1,5 +1,6 @@
 function s
 	if test -e $argv[1]
+        # FIXME: use basename
 		cp -f $argv[1] /tmp/$argv[1]-(date '+%Y%m%d_%H%M%S')
 	end
 	touch $argv[1]

@@ -9,6 +9,8 @@ set nu
 set colorcolumn=90
 set clipboard=unnamedplus
 set hlsearch
+set incsearch
+set smartcase
 hi Search guibg=LightBlue
 map <F2> :Ccontinue <CR>
 map <F4> :exe "C print " . expand("<cword>") <CR>
@@ -39,3 +41,6 @@ let g:multi_cursor_start_word_key='g<C-n>'
 
 highlight multiple_cursors_cursor term=reverse cterm=reverse gui=reverse
 highlight link multiple_cursors_visual Visual
+
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
